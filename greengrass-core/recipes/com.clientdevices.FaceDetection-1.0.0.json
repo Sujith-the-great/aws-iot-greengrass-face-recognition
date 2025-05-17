@@ -1,0 +1,27 @@
+{
+  "RecipeFormatVersion": "2020-01-25",
+  "ComponentName": "com.clientdevices.FaceDetection",
+  "ComponentVersion": "1.0.0",
+  "ComponentDescription": "Face detection from MQTT and output to SQS",
+  "ComponentPublisher": "ASU",
+  "ComponentConfiguration": {
+    "DefaultConfiguration": {}
+  },
+  "Manifests": [
+    {
+      "Platform": {
+        "os": "linux"
+      },
+      "Lifecycle": {
+        "run": "python3 -m pip install --no-cache-dir --user boto3 numpy==1.24.4 torch==1.9.1+cpu torchvision==0.10.1+cpu  torchaudio==0.9.1 awscrt==0.24.1 awsiotsdk --extra-index-url https://download.pytorch.org/whl/cpu && python3 /greengrass/v2/packages/artifacts/com.clientdevices.FaceDetection/1.0.0/fd_component.py"      },
+      "Artifacts": [
+        {
+          "URI": "s3://local/fd_component.py"
+        },
+        {
+          "URI": "s3://local/facenet_pytorch"
+        }
+      ]
+    }
+  ]
+}
