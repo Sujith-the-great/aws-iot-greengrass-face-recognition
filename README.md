@@ -12,7 +12,7 @@ Modern IoT applications demand real-time inference, privacy preservation, and sc
 
 **Abstract**  
 1. **Edge (Greengrass Core)**  
-   - Subscribes to MQTT topic `clients/<ASU-ID>-IoTThing`.  
+   - Subscribes to MQTT topic `clients/1229564013-IoTThing`.  
    - Decodes incoming Base64-encoded frames.  
    - Detects faces using MTCNN (facenet-pytorch).  
    - Crops & re-encodes detected faces, then sends them to an SQS “request” queue.
@@ -59,3 +59,13 @@ aws-iot-greengrass-face-recognition/
 └── Project Requirements/
     └── Project 2 Part I (ECR approach).pdf
     └── Project 2 Part II.pdf
+
+---
+
+## Description
+Our application will use AWS IoT Greengrass and AWS Lambda to implement a distributed pipeline to recognize faces in video frames collected from Internet of Things (IoT) devices such as smart cameras (illustrated in Figure 1).
+1. The pipeline starts with an IoT device, sending video frames to a Greengrass Core device using MQTT.
+2. The face detection program, running as a Greengrass component on the Core device, receives video frames, performs face detection using a machine learning model (MTCNN), and produces the detected faces.
+3. The detected faces are then sent to an SQS request queue, triggering the face-recognition function running on AWS Lambda.
+4. The face recognition function performs face recognition on the detected faces using a ML model (FaceNet), and produces the classification results of the recognized faces.
+5. The recognition results are to an SQS response queue and retrieved by the IoT device.
