@@ -60,12 +60,14 @@ aws-iot-greengrass-face-recognition/
     └── Project 2 Part I (ECR approach).pdf
     └── Project 2 Part II.pdf
 
----
+# Description
 
-## **Description**
-Our application will use AWS IoT Greengrass and AWS Lambda to implement a distributed pipeline to recognize faces in video frames collected from Internet of Things (IoT) devices such as smart cameras (illustrated in Figure 1).
-1. The pipeline starts with an IoT device, sending video frames to a Greengrass Core device using MQTT.
-2. The face detection program, running as a Greengrass component on the Core device, receives video frames, performs face detection using a machine learning model (MTCNN), and produces the detected faces.
-3. The detected faces are then sent to an SQS request queue, triggering the face-recognition function running on AWS Lambda.
-4. The face recognition function performs face recognition on the detected faces using a ML model (FaceNet), and produces the classification results of the recognized faces.
-5. The recognition results are to an SQS response queue and retrieved by the IoT device.
+Our application uses AWS IoT Greengrass and AWS Lambda to implement a distributed pipeline to recognize faces in video frames collected from Internet of Things (IoT) devices such as smart cameras.
+
+
+1. **Frame Capture & Publish:** An IoT device sends video frames to a Greengrass Core device using MQTT.
+2. **Edge Face Detection:** A Greengrass component running MTCNN on the Core device processes incoming frames and detects faces.
+3. **Queue Request:** Detected face crops are sent to an SQS request queue, triggering the face-recognition Lambda.
+4. **Cloud Recognition:** The AWS Lambda function loads a FaceNet model to perform recognition and outputs identified labels.
+5. **Response Delivery:** Recognition results are posted to an SQS response queue, which the IoT device retrieves for downstream use.
+
