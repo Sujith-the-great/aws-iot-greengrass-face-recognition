@@ -59,7 +59,7 @@ aws-iot-greengrass-face-recognition/
 └── Project Requirements/
     └── Project 2 Part I (ECR approach).pdf
     └── Project 2 Part II.pdf
-
+```
 # Description
 
 Our application uses AWS IoT Greengrass and AWS Lambda to implement a distributed pipeline to recognize faces in video frames collected from Internet of Things (IoT) devices such as smart cameras.
