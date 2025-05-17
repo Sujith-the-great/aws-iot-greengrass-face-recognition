@@ -62,7 +62,7 @@ aws-iot-greengrass-face-recognition/
 
 ---
 
-## Description
+## **Description**
 Our application will use AWS IoT Greengrass and AWS Lambda to implement a distributed pipeline to recognize faces in video frames collected from Internet of Things (IoT) devices such as smart cameras (illustrated in Figure 1).
 1. The pipeline starts with an IoT device, sending video frames to a Greengrass Core device using MQTT.
 2. The face detection program, running as a Greengrass component on the Core device, receives video frames, performs face detection using a machine learning model (MTCNN), and produces the detected faces.
