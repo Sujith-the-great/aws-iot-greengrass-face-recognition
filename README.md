@@ -56,5 +56,6 @@ aws-iot-greengrass-face-recognition/
 ├── lambda-face-recognition/
 │   ├── Dockerfile                  # Part I ECR approach
 │   └── fr_lambda.py                # FaceNet handler
-└── docs/
-    └── architecture.png
+└── Project Requirements/
+    └── Project 2 Part I (ECR approach).pdf
+    └── Project 2 Part II.pdf
