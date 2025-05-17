@@ -1,6 +1,7 @@
 # AWS IoT Greengrass Edge Face Recognition Pipeline
 
 **Repository:** `aws-iot-greengrass-face-recognition`
+<img width="569" alt="image" src="https://github.com/user-attachments/assets/2e5a6203-481a-4c9d-bc9b-3c7355d1e26d" />
 
 ---
 
